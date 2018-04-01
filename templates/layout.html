@@ -1,0 +1,181 @@
+<html>
+   <body>
+     <head>
+       <title>Written by Gan</title>
+
+      	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+      		<!--
+      		CSS
+      		============================================= -->
+      		<link rel="stylesheet" href="static/css/linearicons.css">
+      		<link rel="stylesheet" href="static/css/owl.carousel.css">
+      		<link rel="stylesheet" href="static/css/font-awesome.min.css">
+      		<link rel="stylesheet" href="static/css/nice-select.css">
+      		<link rel="stylesheet" href="static/css/magnific-popup.css">
+      		<link rel="stylesheet" href="static/css/bootstrap.css">
+      		<link rel="stylesheet" href="static/css/main.css">
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script>
+            $("document").ready(function(){
+              $("button").click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                  type: 'GET',
+                  cache: false,
+                  url: "/new_haiku",
+                  success: function(resp){
+                    d = new Date();
+                    $('#haiku-img').attr('src', resp.path + "?" + d.getTime());
+                    $('#haiku-txt').html(resp.haiku);
+                  }
+                });
+              });
+            });
+          </script>
+      	</head>
+      	<body>
+
+
+
+          <!-- start header Area -->
+          <header id="header" id="home">
+   			    <div class="container">
+   			    	<div class="row align-items-center justify-content-between d-flex">
+   				      <div id="logo">
+   				        <a href="https://www.hackprinceton.com/"><img src="static/img/p_logo.png" alt="" title="" /></a>
+   				      </div>
+   				      <nav id="nav-menu-container">
+   				        <ul class="nav-menu">
+   				          <li class="menu-active"><a href="#home"></a></li>
+   				          <li><a href="https://github.com/jfreier1">Joshua</a></li>
+   				          <li><a href="https://github.com/balloonanimal">Zach</a></li>
+                    <li><a href="https://github.com/aburchell">Gus</a></li>
+                    <li><a href="https://github.swarthmore.edu/nkhoros1">Nicole</a></li>
+   			         </ul>
+   			      </nav><!-- #nav-menu-container -->
+   		    	</div>
+   		    </div>
+   		  </header><!-- #header -->
+        <!-- start end Area -->
+
+
+
+        <!-- start banner Area -->
+  			<section class="banner-area" id="home">
+  				<div class="container">
+  					<div class="row fullscreen d-flex align-items-center justify-content-start">
+  						<div class="banner-content col-lg-7">
+  							<h5 class="text-white text-uppercase">Author: Tensorflow </h5>
+  							<h1 class="text-uppercase">
+  								Written by Gan
+  							</h1>
+  							<p class="text-white pt-20 pb-20"> Robot-handwritten Haikus. We trained a Gan to generate realistic human-looking letters from the EMNIST dataset, using content free grammar to approximate sentence structure and the NLTK python library to randomly generate words at the correct letter count. </p>
+                  <button id="haiku-button">Generate Haiku</button>
+  						  </div>
+  						<div class="col-lg-5 banner-right">
+  							<img class="img-fluid" src="static/img/header-img.png" alt="">
+  						</div>
+  					</div>
+  				</div>
+  			</section>
+  			<!-- End banner Area -->
+
+
+
+
+        <!-- Start about Area -->
+  			<section class="section-gap info-area" id="about">
+          <div class="container">
+            <div class="row d-flex justify-content-center">
+              <div class="menu-content pb-15 col-lg-8">
+                <div class="title text-center">
+                  <h1 class="mb-10"> Robots V.S. Poetry </h1>
+                  <p>Haikus generated just for you!</p>
+                </div>
+              </div>
+            </div>
+          <div class="container">
+  					<div class="single-info row mt-40 align-items-center">
+  						<div class="col-lg-6 col-md-12 text-center no-padding info-left">
+  							<div class="info-thumb">
+  								<img src="static/img/hack.jpg" class="img-fluid info-img" alt="">
+  							</div>
+  						</div>
+  						<div class="col-lg-6 col-md-12 no-padding info-rigth">
+  							<div class="info-content">
+                  <img id="haiku-img" src="static/img/haiku_cached.png" class="img-fluid info-img" alt="">
+		  <p id="haiku-txt"><br>
+        THEIR BONNIE HIKING
+		    THEIR ENHANCED CYCLIST SPRINT
+		    THE BOXWOOD FINE BLUE </p>
+  					    </div>
+  				    </div>
+  			</section>
+  			<!-- End about Area -->
+
+        <!-- Start call-to-action Area -->
+        <section class="call-to-action-area section-gap">
+          <div class="container">
+            <div class="row justify-content-center top">
+              <div class="col-lg-10">
+                <h1 class="text-white text-center mt+30">Components of our hack</h1>
+              </div>
+            </div>
+            <div class="row justify-content-center d-flex">
+              <div class="download-button d-flex flex-row justify-content-center mt-30">
+                <div class="buttons flex-row d-flex">
+                  <div class="desc">
+                    <a href="#">
+                      <p>
+                        <span>Machine Learning</span> <br>
+                        <br>
+			                     The characters used for this project are created by a Generative Adversarial Network (GAN). GANs are a state of the art model for generating convincing images from a dataset. The specific dataset we used here was the Extended MNIST dataset (EMNIST). This is a dataset of handwritten digits and characters compiled for research purposes. GANs work by training two neural networks in tandem on the dataset, a Generator network and a Discriminator network. A common metaphor for the behavior of these networks is found in the world of art forgery. The generator network is the forger, constantly trying to improve its ability to mimic the real images. At the same time the Discriminator network is the investigator, training to recognize real images from forgeries. Together both networks improve, playing a zero sum game against one another. When this model was first introduced in 2014 it made a massive impact on the world of generational models. That said, it is still a very active and poorly understood research area, so perfect results are far from expected.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                <div class="buttons flex-row d-flex">
+                  <div class="desc">
+                    <a href="#">
+                      <p>
+                        <span>Natural Language Processing</span> <br>
+                        <br>
+                        The haiku generator is based on a simplified context-free grammar for English. It randomly generates a sentence template consisting of part-of-speech markers. This template is then populated with words corresponding to the correct part-of-speech and bounded by the number of syllables per line. The specific words used are randomly chosen from POS specific word banks, populated by cross-referencing the Princeton Wordnet and CMU Pronouncing Dictionary corpora, which mark POS and stress, respectively. Stress markers are then used to calculate the syllable count of words, to ensure the 5-7-5 structure of traditional haiku.
+
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End call-to-action Area -->
+
+        			<!-- start footer Area -->
+        			<footer class="footer-area section-gap">
+        				<div class="container">
+        					<div class="row">
+        						<div class="col-lg-5 col-md-6 col-sm-6">
+        							<div class="single-footer-widget">
+        								<h6>Meet the S.W.A.T. TEAM </h6>
+        								<p>
+
+        								Gus, Joshua, Zach, and Nicole are sophomores at Swarthmore College. Guss studies Computer and Cognitive Sciences with an emphasis on Linguistics. He is passionate about natural language processing and saw this hackathon as an opportunity to explore its capacity. Zach is pursuing an honors degree in math and computer science. He is particularly excited about experimenting with new and rapidly developing machine learning frameworks like Tenserflow. While Nicole primarily studies Economics and International Relations, she also dabbles in the art of Computer Science. Joshua is pursuing honors degrees in Computer Science and Music. He cool.
+        								</p>
+        								<p class="footer-text">
+        								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                      </div>
+        					</div>
+        				</div>
+              </div>
+        		</footer>
+        			<!-- End footer Area -->
+        	</html>
+
+   </body>
+</html>
